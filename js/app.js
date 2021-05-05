@@ -5,414 +5,185 @@
 
 let hour = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-// constructor function :
+let braNches = [];
 
-function Storebranch(branchName, minCust, maxCust, avgSale, NocPerhour, cookiesSoldperHour, total ) {
-
-    this.name = branchName;
-     
-}
 // random 
 
 function randomNoc(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-//prototype random num of customers
+// constructor function :
 
-Storebranch.prototype.minCust= function(){
-    this.minCust=randomNoc(23, 65)+ 'customer';
+function Storebranch(branchName, minCust, maxCust, avgSale,) {
+
+    this.branchName = branchName;
+    this.minCust = minCust;
+    this.maxCust = maxCust;
+    this.avgSale = avgSale;
+
+    // empty array to push the values to
+    this.numbOfCustPerhour = [];
+    this.cookiesSoldperHour = [];
+    this.totalCookiesSold = 0;
+
+
+    braNches.push(this);
 }
 
-// prototype to render my work
-
-Storebranch.prototype.rWeb = function(){
-    let theParent=document.getElementById('branchCookie');
-    let brAnch=document.createElement('h2')
-    theParent.appendChild(brAnch);
-    let h2 = document.createElement('h2');
-    brAnch.appendChild(h2);
-    h2.textContent=this.name;
-    console.log(theParent);
-}
-
-
-// new instance = the benefit of constructor function
-let Seattle = new Storebranch('seattle');
-Seattle.minCust();
-console.log(Seattle);
-Seattle.rWeb();
-
-
-let tokyo = new Storebranch ('tokyo');
-tokyo.minCust();
-console.log(tokyo);
-
-
-// Seattle.getRandomNoc();
-
-
-
-
-
-
-
-
-
-
-
-
-// Seattle branch
-
-// Work hours array
-
-// let hour = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-
-
-function randomNoc(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-
-// let Seattle = {
-//     name: 'Seattle',
-//     minCust: 23,
-//     maxCust: 65,
-//     avgSale: 6.3,
-//     NocPerhour: [],
-//     cookiesSoldperHour: [],
-//     total: 0,
-
-
-//     // calculate the num of customers
-
-//     getRandomNoc: function () {
-//         for (let i = 0; i < hour.length; i++) {
-//             this.NocPerhour[i] = (randomNoc(this.minCust, this.maxCust))
-//         }
-//     },
-//     // calculate the cookies purchased per hour
-//     randomCookieSold: function () {
-//         for (let i = 0; i < hour.length; i++) {
-//             this.cookiesSoldperHour.push(Math.floor(this.NocPerhour[i] * this.avgSale));
-
-//             //  total random cookies purchased per hour
-//             this.total += this.cookiesSoldperHour[i]
-//         }
-//     },
-//     // function to display data on the web
-//     salesFunction: function () {
-//         // link the id from sales.html in JS file
-//         let theParent = document.getElementById('branchCookie');
-//         console.log(theParent)
-//         let brAnch = document.createElement('h2');
-//         theParent.appendChild(brAnch);
-//         brAnch.textContent = this.name;
-//         // create unordered list element 
-//         let unOrderedList = document.createElement('ul');
-//         theParent.appendChild(unOrderedList);
-
-//         // loop throw the hours
-//         for (let i = 0; i < hour.length; i++) {
-
-//             // create list 
-//             let listItems = document.createElement('li')
-//             unOrderedList.appendChild(listItems);
-//             listItems.textContent = `${hour[i]}: ${this.cookiesSoldperHour[i]}` + ' cookies'
-//         }
-//         // total element
-//         let totalCookies = document.createElement('li');
-//         unOrderedList.appendChild(totalCookies);
-//         totalCookies.textContent = `total: ${this.total}` + ' cookies'
-//     }
-
-// }
-// console.log(Seattle);
-
-
-// // calling the function
-
-// Seattle.getRandomNoc();
-// Seattle.randomCookieSold();
-// Seattle.salesFunction();
-
-
-
-
-
-
-
-
-// // TOKYO BRANCH 
-
-// function randomNoc(min, max) {
-//     return Math.floor(Math.random() * (max - min + 1) + min);
-// }
-
-
-// let tokyo = {
-//     name: 'tokyo',
-//     minCust: 3,
-//     maxCust: 24,
-//     avgSale: 1.2,
-//     NocPerhour: [],
-//     cookiesSoldperHour: [],
-//     total: 0,
-
-
-//     // calculate the num of customers
-
-//     getRandomNoc: function () {
-//         for (let i = 0; i < hour.length; i++) {
-//             this.NocPerhour[i] = (randomNoc(this.minCust, this.maxCust))
-//         }
-//     },
-//     // calculate the cookies purchased per hour
-//     randomCookieSold: function () {
-//         for (let i = 0; i < hour.length; i++) {
-//             this.cookiesSoldperHour.push(Math.floor(this.NocPerhour[i] * this.avgSale));
-
-//             //  total random cookies purchased per hour
-//             this.total += this.cookiesSoldperHour[i]
-//         }
-//     },
-//     // function to display data on the web
-//     salesFunction: function () {
-//         // link the id from sales.html in JS file
-//         let theParent = document.getElementById('branchCookie');
-//         console.log(theParent)
-//         let brAnch = document.createElement('h2');
-//         theParent.appendChild(brAnch);
-//         brAnch.textContent = this.name;
-//         // create unordered list element 
-//         let unOrderedList = document.createElement('ul');
-//         theParent.appendChild(unOrderedList);
-
-//         // loop throw the hours
-//         for (let i = 0; i < hour.length; i++) {
-
-//             // create list 
-//             let listItems = document.createElement('li')
-//             unOrderedList.appendChild(listItems);
-//             listItems.textContent = `${hour[i]}: ${this.cookiesSoldperHour[i]}` + ' cookies'
-//         }
-//         // total element
-//         let totalCookies = document.createElement('li');
-//         unOrderedList.appendChild(totalCookies);
-//         totalCookies.textContent = `total: ${this.total}` + ' cookies'
-//     }
-
-// }
-// console.log(tokyo);
-
-
-
-// // calling the function
-
-// tokyo.getRandomNoc();
-// tokyo.randomCookieSold();
-// tokyo.salesFunction();
-
-
-
-
-
-// Dubai
-
-
-
-
-function randomNoc(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-
-let Dubai = {
-    name: 'Dubai',
-    minCust: 11,
-    maxCust: 38,
-    avgSale: 3.7,
-    NocPerhour: [],
-    cookiesSoldperHour: [],
-    total: 0,
-
-
-    // calculate the num of customers
-
-    getRandomNoc: function () {
-        for (let i = 0; i < hour.length; i++) {
-            this.NocPerhour[i] = (randomNoc(this.minCust, this.maxCust))
-        }
-    },
-    // calculate the cookies purchased per hour
-    randomCookieSold: function () {
-        for (let i = 0; i < hour.length; i++) {
-            this.cookiesSoldperHour.push(Math.floor(this.NocPerhour[i] * this.avgSale));
-
-            //  total random cookies purchased per hour
-            this.total += this.cookiesSoldperHour[i]
-        }
-    },
-    // function to display data on the web
-    salesFunction: function () {
-        // link the id from sales.html in JS file
-        let theParent = document.getElementById('branchCookie');
-        console.log(theParent)
-        let brAnch = document.createElement('h2');
-        theParent.appendChild(brAnch);
-        brAnch.textContent = this.name;
-        // create unordered list element 
-        let unOrderedList = document.createElement('ul');
-        theParent.appendChild(unOrderedList);
-
-        // loop throw the hours
-        for (let i = 0; i < hour.length; i++) {
-
-            // create list 
-            let listItems = document.createElement('li')
-            unOrderedList.appendChild(listItems);
-            listItems.textContent = `${hour[i]}: ${this.cookiesSoldperHour[i]}` + ' cookies'
-        }
-        // total element
-        let totalCookies = document.createElement('li');
-        unOrderedList.appendChild(totalCookies);
-        totalCookies.textContent = `total: ${this.total}` + ' cookies'
+Storebranch.prototype.totalCustomerPerhour = function () {
+    for (let i = 0; i < hour.length; i++) {
+        this.numbOfCustPerhour.push(randomNoc(this.minCust, this.maxCust));
     }
 
 }
-console.log(Dubai);
+
+Storebranch.prototype.totalCookiesPerhour = function () {
+    for (let i = 0; i < hour.length; i++) {
+        this.cookiesSoldperHour.push(Math.floor(this.numbOfCustPerhour[i] * this.avgSale));
 
 
-// calling the function
-Dubai.getRandomNoc();
-Dubai.randomCookieSold();
-Dubai.salesFunction();
+        //total cookies sold perday
+        this.totalCookiesSold += this.cookiesSoldperHour[i];
+    }
+    // console.log(this.cookiesSoldperHour);
+}
+
+// new instance => the benefit of constructor function
+let Seattle = new Storebranch('seattle', 23, 65, 6.3);
+let tokyo = new Storebranch('tokyo', 3, 24, 1.2);
+let dubai = new Storebranch('dubai', 11, 38, 3.7);
+let Paris = new Storebranch('paris', 20, 38, 2.3);
+let Lima = new Storebranch('Lima', 2, 16, 4.6);
+
+// Seattle.totalCustomerPerhour();
+// Seattle.totalCookiesPerhour();
+// tokyo.totalCustomerPerhour();
+// tokyo.totalCookiesPerhour();
+// dubai.totalCustomerPerhour();
+// dubai.totalCookiesPerhour();
+// Paris.totalCustomerPerhour();
+// Paris.totalCookiesPerhour();
 
 
 
+// DOM
 
-// Paris
+let theParent = document.getElementById('theParent')
+console.log(theParent);
 
-let Paris = {
-    name: 'Paris',
-    minCust: 20,
-    maxCust: 38,
-    avgSale: 2.3,
-    NocPerhour: [],
-    cookiesSoldperHour: [],
-    total: 0,
+let table = document.createElement('table');
+theParent.appendChild(table);
+
+function createHeader() {
+    let heaDRow = document.createElement('tr');
+    table.appendChild(heaDRow);
+
+    let f1Th = document.createElement('th');
+    heaDRow.appendChild(f1Th);
+    f1Th.textContent = 'Branch'
 
 
-    // calculate the num of customers
+    // loop throw the hour array
+    for (let i = 0; i < hour.length; i++) {
+        let tableHeaderElement = document.createElement('th')
+        heaDRow.appendChild(tableHeaderElement);
+        tableHeaderElement.textContent = hour[i];
+    }
+    let lastTableHeader = document.createElement('th');
+    heaDRow.appendChild(lastTableHeader);
+    lastTableHeader.textContent = 'Location Total'
+}
 
-    getRandomNoc: function () {
-        for (let i = 0; i < hour.length; i++) {
-            this.NocPerhour[i] = (randomNoc(this.minCust, this.maxCust))
-        }
-    },
-    // calculate the cookies purchased per hour
-    randomCookieSold: function () {
-        for (let i = 0; i < hour.length; i++) {
-            this.cookiesSoldperHour.push(Math.floor(this.NocPerhour[i] * this.avgSale));
+createHeader();
 
-            //  total random cookies purchased per hour
-            this.total += this.cookiesSoldperHour[i]
-        }
-    },
-    // function to display data on the web
-    salesFunction: function () {
-        // link the id from sales.html in JS file
-        let theParent = document.getElementById('branchCookie');
-        console.log(theParent)
-        let brAnch = document.createElement('h2');
-        theParent.appendChild(brAnch);
-        brAnch.textContent = this.name;
-        // create unordered list element 
-        let unOrderedList = document.createElement('ul');
-        theParent.appendChild(unOrderedList);
+//table data
 
-        // loop throw the hours
-        for (let i = 0; i < hour.length; i++) {
+Storebranch.prototype.webRender = function () {
+    let tableDataRow = document.createElement('tr');
+    table.appendChild(tableDataRow);
 
-            // create list 
-            let listItems = document.createElement('li')
-            unOrderedList.appendChild(listItems);
-            listItems.textContent = `${hour[i]}: ${this.cookiesSoldperHour[i]}` + ' cookies'
-        }
-        // total element
-        let totalCookies = document.createElement('li');
-        unOrderedList.appendChild(totalCookies);
-        totalCookies.textContent = `total: ${this.total}` + ' cookies'
+    let tableData = document.createElement('td');
+    tableDataRow.appendChild(tableData);
+    tableData.textContent = this.branchName;
+
+
+    // to loop throw the hour array 
+    for (let i = 0; i < hour.length; i++) {
+        let tableDataElement = document.createElement('td');
+        tableDataRow.appendChild(tableDataElement);
+        tableDataElement.textContent = this.cookiesSoldperHour[i];
     }
 
+    // calculate the total cookies sold in each branch
+    let totalCookiesSoldEachBranch = document.createElement('td');
+    tableDataRow.appendChild(totalCookiesSoldEachBranch);
+    totalCookiesSoldEachBranch.textContent = this.totalCookiesSold;
+
+
 }
-console.log(Paris);
-
-// calling the function
-Paris.getRandomNoc();
-Paris.randomCookieSold();
-Paris.salesFunction();
 
 
 
-// Lima
 
-let Lima = {
-    name: 'Lima',
-    minCust: 2,
-    maxCust: 16,
-    avgSale: 4.6,
-    NocPerhour: [],
-    cookiesSoldperHour: [],
-    total: 0,
+for (let i = 0; i < braNches.length; i++) {
+    braNches[i].totalCustomerPerhour();
+    braNches[i].totalCookiesPerhour();
+    braNches[i].webRender();
+}
+
+console.log(braNches);
 
 
-    // calculate the num of customers
 
-    getRandomNoc: function () {
-        for (let i = 0; i < hour.length; i++) {
-            this.NocPerhour[i] = (randomNoc(this.minCust, this.maxCust))
+
+
+
+// function to the table footer 
+
+function createFooter() {
+    let footerRow = document.createElement('tr');
+    table.appendChild(footerRow);
+
+    let footerHead = document.createElement('th');
+    footerRow.appendChild(footerHead);
+    footerHead.textContent = 'Total';
+
+
+    //nested for loop 
+    let sumTotalOftotal = 0;
+    for (let i = 0; i < hour.length; i++) {
+        let totalPerhour = 0;
+        for (let b = 0; b < braNches.length; b++) {
+            totalPerhour += braNches[b].cookiesSoldperHour[i];
+
+
         }
-    },
-    // calculate the cookies purchased per hour
-    randomCookieSold: function () {
-        for (let i = 0; i < hour.length; i++) {
-            this.cookiesSoldperHour.push(Math.floor(this.NocPerhour[i] * this.avgSale));
-
-            //  total random cookies purchased per hour
-            this.total += this.cookiesSoldperHour[i]
-        }
-    },
-    // function to display data on the web
-    salesFunction: function () {
-        // link the id from sales.html in JS file
-        let theParent = document.getElementById('branchCookie');
-        console.log(theParent)
-        let brAnch = document.createElement('h2');
-        theParent.appendChild(brAnch);
-        brAnch.textContent = this.name;
-        // create unordered list element 
-        let unOrderedList = document.createElement('ul');
-        theParent.appendChild(unOrderedList);
-
-        // loop throw the hours
-        for (let i = 0; i < hour.length; i++) {
-
-            // create list 
-            let listItems = document.createElement('li')
-            unOrderedList.appendChild(listItems);
-            listItems.textContent = `${hour[i]}: ${this.cookiesSoldperHour[i]}` + ' cookies'
-        }
-        // total element
-        let totalCookies = document.createElement('li');
-        unOrderedList.appendChild(totalCookies);
-        totalCookies.textContent = `total: ${this.total}` + ' cookies'
+        console.log(totalPerhour);
+        let footerTotal = document.createElement('th');
+        footerRow.appendChild(footerTotal);
+        footerTotal.textContent = totalPerhour;
+        sumTotalOftotal += totalPerhour;
     }
-
+    let totalOFtotal = document.createElement('th');
+    totalOFtotal.textContent = `All branches total: ${sumTotalOftotal}`;
+    footerRow.appendChild(totalOFtotal);
 }
-console.log(Lima);
 
-//Calling functions 
-Lima.getRandomNoc();
-Lima.randomCookieSold();
-Lima.salesFunction();
+createFooter();
+
+
+
+
+
+
+
+
+
+
+
+// ________________________________________________________________________
+
+
+
+
