@@ -150,6 +150,7 @@ function createFooter() {
     footerHead.textContent = 'Total';
 
 
+
     //nested for loop 
     let sumTotalOftotal = 0;
     for (let i = 0; i < hour.length; i++) {
@@ -168,17 +169,10 @@ function createFooter() {
     let totalOFtotal = document.createElement('th');
     footerRow.appendChild(totalOFtotal);
     totalOFtotal.textContent = `All branches total: ${sumTotalOftotal}`;
-   
+
 }
 
 createFooter();
-
-
-
-
-
-
-
 
 
 
@@ -188,3 +182,31 @@ createFooter();
 
 
 
+
+
+    //  Form
+
+    let newBranch = document.getElementById('newBranch');
+    newBranch.addEventListener('submit', addNewBranch);
+    
+    function addNewBranch(refresh) {
+        refresh.preventDefault();
+    
+    
+        let branchName = refresh.target.nameField.value;
+        console.log(branchName);
+    
+        let minCust = refresh.target.minCust.value;
+    
+        let maxCust = refresh.target.maxCust.value;
+    
+        let avgSale = refresh.target.avgSale.value;
+    
+        let createdBranch = new Storebranch(branchName, minCust, maxCust, avgSale);
+    
+        createdBranch.totalCustomerPerhour();
+        createdBranch.totalCookiesPerhour();
+        createdBranch.webRender();
+        
+    }
+    
