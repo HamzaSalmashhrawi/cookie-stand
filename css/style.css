@@ -1,3 +1,113 @@
+/* index page */
+body{
+    background-color: lemonchiffon;
+}
+
+h1{
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgb(226, 196, 156);
+    color: white;
+    font-family: cursive;
+}    
+
+#navpage {
+    padding: 40px;
+    text-align: center;
+}
+
+#navpage li{
+    padding: 10px;
+    display: inline;
+}
+
+
+a{
+     color: rgb(106, 5, 5);
+    text-decoration: none;
+}    
+
+#location{
+    text-align: center;
+    margin: 30px;
+    padding: 20px;
+}    
+#location h2{
+    background-color: wheat;
+    padding: 20px;
+    font-weight: 500;
+    font-family: cursive;
+    margin-bottom: 10px;
+}
+
+#location li {
+    padding: 10px;
+    display: inline-flex;
+    font-family: monospace;
+    background-color: rgb(170, 119, 113);
+    border-radius: 60%;
+}
+
+#location li a{
+    color: rgb(245, 235, 216);
+}
+
+#workhours {
+    margin: 30px;
+    padding: 20px;
+}    
+#workhours li {
+    margin-top: 15px;
+    padding: 5px;
+    display: flex;
+}
+p {
+    font-family: cursive;
+}    
+#contactinfo {
+    font-weight: 900;
+    padding: 10px;
+    margin: 20px;
+    font-family: monospace;
+    background-color: lightsalmon;
+    text-align: center;
+}
+
+img {
+    padding: 20 px ;
+    margin: 100px;
+}
+
+
+img {
+    width: 250px;
+    height: 150px;
+}
+
+
+footer {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------- */
+
+/* SALES PAGE  */
+
 h1 {
     text-align: center;
 }
