@@ -166,8 +166,9 @@ function createFooter() {
         sumTotalOftotal += totalPerhour;
     }
     let totalOFtotal = document.createElement('th');
-    totalOFtotal.textContent = `All branches total: ${sumTotalOftotal}`;
     footerRow.appendChild(totalOFtotal);
+    totalOFtotal.textContent = `All branches total: ${sumTotalOftotal}`;
+   
 }
 
 createFooter();
