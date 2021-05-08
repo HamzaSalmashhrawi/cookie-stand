@@ -172,7 +172,7 @@ function createFooter() {
 
 }
 
-createFooter();
+// createFooter();
 
 
 
@@ -207,6 +207,7 @@ createFooter();
         createdBranch.totalCustomerPerhour();
         createdBranch.totalCookiesPerhour();
         createdBranch.webRender();
-        
+        createFooter();
+       
     }
-    
+  
