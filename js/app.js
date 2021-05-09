@@ -145,6 +145,8 @@ function createFooter() {
     let footerRow = document.createElement('tr');
     table.appendChild(footerRow);
 
+    footerRow.setAttribute('id', 'totalRow');
+
     let footerHead = document.createElement('th');
     footerRow.appendChild(footerHead);
     footerHead.textContent = 'Total';
@@ -172,7 +174,7 @@ function createFooter() {
 
 }
 
-// createFooter();
+createFooter();
 
 
 
@@ -184,30 +186,36 @@ function createFooter() {
 
 
 
-    //  Form
+//  Form
 
-    let newBranch = document.getElementById('newBranch');
-    newBranch.addEventListener('submit', addNewBranch);
-    
-    function addNewBranch(refresh) {
-        refresh.preventDefault();
-    
-    
-        let branchName = refresh.target.nameField.value;
-        console.log(branchName);
-    
-        let minCust = refresh.target.minCust.value;
-    
-        let maxCust = refresh.target.maxCust.value;
-    
-        let avgSale = refresh.target.avgSale.value;
-    
-        let createdBranch = new Storebranch(branchName, minCust, maxCust, avgSale);
-    
-        createdBranch.totalCustomerPerhour();
-        createdBranch.totalCookiesPerhour();
-        createdBranch.webRender();
-        createFooter();
-       
-    }
-  
+let newBranch = document.getElementById('newBranch');
+newBranch.addEventListener('submit', addNewBranch);
+
+function addNewBranch(refresh) {
+    refresh.preventDefault();
+
+
+    let branchName = refresh.target.nameField.value;
+    console.log(branchName);
+
+    let minCust = refresh.target.minCust.value;
+
+    let maxCust = refresh.target.maxCust.value;
+
+    let avgSale = refresh.target.avgSale.value;
+
+    let createdBranch = new Storebranch(branchName, minCust, maxCust, avgSale);
+
+
+
+    let lastRow =document.getElementById('totalRow');
+    lastRow.remove();
+
+
+
+    createdBranch.totalCustomerPerhour();
+    createdBranch.totalCookiesPerhour();
+    createdBranch.webRender();
+    createFooter();
+
+}
