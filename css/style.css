@@ -3,26 +3,46 @@ body{
     background-color: lemonchiffon;
 }
 
-h1{
-    font-size: 30px;
-    font-weight: bold;
+header section {
     background-color: rgb(226, 196, 156);
+
+}
+#family{
+   border-radius: 50%;
+   width: 15%;
+   float:inline-start;
+   position: relative;
+   margin-top: 5px;
+   margin-left: 120px;
+} 
+
+header section h1{
+    font-size: 40px;
+    font-weight: bold;
     color: white;
-    font-family: cursive;
+    font-family: 'Goblin One', cursive;
+    margin-top: -170px;
+    padding-bottom: 30px;
 }    
+
 
 #navpage {
     padding: 40px;
     text-align: center;
+    font-family: 'Goblin One', cursive;
 }
 
 #navpage li{
-    padding: 10px;
+    padding: 75px;
     display: inline;
 }
 
+a:hover{
+    color: lightseagreen;
+}
 
 a{
+    font-weight: 900;
      color: rgb(106, 5, 5);
     text-decoration: none;
 }    
@@ -36,14 +56,14 @@ a{
     background-color: wheat;
     padding: 20px;
     font-weight: 500;
-    font-family: cursive;
     margin-bottom: 10px;
 }
 
 #location li {
+    font-family: cursive;
+    margin: 20px;
     padding: 10px;
     display: inline-flex;
-    font-family: monospace;
     background-color: rgb(170, 119, 113);
     border-radius: 60%;
 }
@@ -55,11 +75,15 @@ a{
 #workhours {
     margin: 30px;
     padding: 20px;
+    text-align: center;
 }    
+
+
+
 #workhours li {
     margin-top: 15px;
     padding: 5px;
-    display: flex;
+    /* display: flex; */
 }
 p {
     font-family: cursive;
@@ -71,6 +95,26 @@ p {
     font-family: monospace;
     background-color: lightsalmon;
     text-align: center;
+    border-radius: 30%;
+    font-family: 'Courgette', cursive;
+}
+
+#shop{
+    text-align: center;
+}
+
+#shop h2{
+    font-size: 25px;
+    color: white;
+    font-weight: 800;
+    background-color: rgb(191, 143, 128);
+    margin: 0 250px;
+    padding: 30px;
+    font-family: 'Courgette', cursive;
+    border-radius: 40%;
+}
+#shop p{
+    padding: 20px;
 }
 
 img {
@@ -79,14 +123,16 @@ img {
 }
 
 
-img {
+/* img {
     width: 250px;
     height: 150px;
-}
+} */
 
 
 footer {
     text-align: center;
+    background-color: lightsalmon;
+    padding: 10px;
 }
 
 
