@@ -218,4 +218,6 @@ function addNewBranch(refresh) {
     createdBranch.webRender();
     createFooter();
 
+    newBranch.reset();
 }
+
