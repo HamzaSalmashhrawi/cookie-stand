@@ -55,8 +55,9 @@ a{
 #location h2{
     background-color: wheat;
     padding: 20px;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 10px;
+    font-family: 'Courgette', cursive;
 }
 
 #location li {
